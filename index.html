@@ -1,13 +1,497 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WUSTL + Vite + React</title>
+    <meta charset="UTF-8" >
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" >
+    <link href="style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Final Project</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <header>
+      <div class="main-heading">
+        <img src="Logo.jpg.png" alt="Logo">
+        <h1> Paws and Claws Rescue</h1>
+      </div>
+      <div class="headinglinks">
+        <nav>
+          <ul>
+              <li><a href="#AboutUs">About Us</a></li>
+             <li><a href="#GetInvolved">Get Involved</a></li>
+             <li><a href="#Pets">Our Pets</a></li>
+          </ul>
+      </nav>
+    </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="picture">
+          <div class="SaveLife">
+              <h2> Help Save A Life</h2>
+          </div>
+          <div class=" AnimalImage">
+              <img src="AdoptAnimal.avif" alt="Dog and Cat Picture">
+          </div>
+          </div>
+
+          <div class="Statistics">
+            <div class="Stat1">
+              <img src="DogCatIcon.png" alt="Dog and Cat Icon">
+              <p>There are an estimated 70 million homeless dogs and cats in the United States</p>
+            </div>
+            <div class="Stat2">
+              <img src="DogCatIcon.png" alt="Dog and Cat Icon">
+              <p>Approximately 2,200 dogs and cats are put down at shelters across the country every day</p>
+            </div>
+            <div class="Stat3">
+              <img src="DogCatIcon.png" alt="Dog and Cat Icon">
+              <p>About 2 million dogs and cats were adopted from shelters in 2023</p>
+            </div>
+          </div>
+
+        <div class="aboutfacts">
+        <div id="AboutUs">
+            <h2>About Us</h2>
+            <div id="aboutUsWords">
+            <p>Paws and Claws Rescue is a nonprofit organization that is centered around finding as many homes for our animals as we can. </p>
+            <p>We are a no kill shelter which means we do not use euthanasia on any of our animals unless it is absolutely necessary for medical reasons. We believe every animal that comes to us deserves a loving home. </p>
+            <p>Our mission is to not only find a home for all our pets but to be able to help find homes for as many dogs and cats as we possibly can.    </p>
+          </div>
+          </div>
+      <div class="factSection">
+      <h2> Random Facts</h2>
+      <div id="facts">
+      </div>
+    </div>
+      <script>
+        async function getData(){
+        fetch('https://meowfacts.herokuapp.com/?count=4')
+        .then( response => response.json())
+        .then(json => {
+          const factsContainer = document.getElementById('facts');
+          json.data.forEach(fact => {
+            const factElement = document.createElement('div');
+            factElement.classList.add('fact');
+            factElement.innerHTML = `<p>${fact}</p>`;
+            factsContainer.appendChild(factElement);
+          }); 
+        })}
+      window.onload=getData
+    </script>
+    </div>
+    <div class="Involved">
+    <div id="GetInvolved">
+            <h2>How To Get Involved</h2>
+          <p> The number one way that most people get involved is by adopting one of our lovely animals! We have a list of dogs and cats currently available for adoption and even offer playdates with any animal in order for both the pet and family to get to know each other better.</p>
+          <p> While we encourage anyone is who able and willing to adopt a pet we also understand that this is not feasible for everyone. Therefore, there are many other ways to support us and our furry friends. </p>
+          <p>As a no kill shelter, we take pride in giving each one of our animals the same care and love, however this also means we require more resources to take care of so many animals. Therefore, we are always accepting donations to help us run this shelter and be able to rescue as many dogs and cats as we can. Every donation goes to making sure all of our animals have the best care. </p>
+          <p>We also welcome volunteers to help feed the animals and walk them! </p>
+          <div class="donate-section">
+            <button type="button" id="donateNow">Donate Now</button>
+          </div>
+    </div>
+    </div>
+
+    <div id="donationPop">
+      <div class="donationPopContent">
+        <span class="close-button">&times;</span>
+        <div class="donate">
+        <p>Thank You So Much for Helping Us Keep our Shelter Running and Taking Care of These Wonderful Animals!</p>
+        <h2>How much would you like to donate?</h2>
+        <div id="buttons">
+        <input type="number" id="donationAmount" placeholder="Enter amount">
+      </div>
+        <div id="submitButton">
+        <button type="button" id="submitDonation">Submit</button>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <script>
+      const donationPop = document.getElementById('donationPop');
+      const donateButton = document.getElementById('donateNow');
+      const closeDonationButton = document.querySelector('.close-button');
+      const submitButton = document.getElementById('submitDonation');
+
+  donateButton.addEventListener('click', () => {
+    donationPop.style.display = 'block';
+  });
+
+  closeDonationButton.addEventListener('click', () => {
+    donationPop.style.display = 'none';
+  });
+
+  submitButton.addEventListener('click', () => {
+    const donationAmount = document.getElementById('donationAmount').value;
+    if (donationAmount && donationAmount > 0) {
+      alert('We greatly appreciate your donation!');
+      donationPop.style.display = 'none'; 
+    } else {
+      alert('Please enter a valid amount.');
+    }
+});
+    </script>
+    <div class="AdoptablePets">
+    <div id="Pets">
+      <h2>Adoptable Pets</h2>
+      <p> This is our current list of pets that we have up for adoption. If you are interested please fill out the form as soon as possible.</p>
+    </div>
+    </div>
+    <div class="filters">
+      <label for="animal">Animal:</label>
+      <select id="animal">
+        <option value="All">All</option>
+        <option value="Dog">Dog</option>
+        <option value="Cat">Cat</option>
+      </select>
+      <label for="breed">Breed:</label>
+      <select id="breed">
+        <option value="All">All</option>
+        <option value="Golden Retriever">Golden Retriever</option>
+        <option value="Bulldog">Bulldog</option>
+        <option value="Australian Shepherd Mix">Australian Shepherd Mix</option>
+        <option value="Chihuahua">Chihuahua</option>
+        <option value="Beagle">Beagle</option>
+        <option value="Poodle Mix">Poodle Mix</option>
+        <option value="German Shepherd">German Shepherd</option>
+      </select>
+      <label for="size">Size:</label>
+      <select id="size">
+        <option value="All">All</option>
+        <option value="Small">Small</option>
+        <option value="Medium">Medium</option>
+        <option value="Large">Large</option>
+      </select>
+      <label for="gender">Gender:</label>
+      <select id="gender">
+        <option value="All">All</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+      </div>
+
+      <div class="pet-Gallery" id="petGallery"></div>
+      <div class="overlay">
+        <a href="#" id="previous">&lt;</a>
+        <img src="GSDog2.jpg" alt="GS Dog">
+        <a href="#" id="next">&gt;</a>
+        <a href="#" id="close">&times;</a>
+      </div>
+
+    <script>
+      const pets= [
+      { id:1,
+        animal: "Dog",
+        name: "Buddy",
+        gender: "Male",
+        breed: "Golden Retriever",
+        age: 2,
+        size: "Large",
+        images: [
+          "GoldenDog1.webp",
+          "GoldenDog1-2.jpg",
+          "GoldenDog1-3.webp",
+        ]
+      },
+      { id:4,
+        animal: "Dog",
+        name: "Oscar",
+        gender: "Male",
+        breed: "Australian Shepherd Mix",
+        age: 4,
+        size: "Medium",
+        images: [
+          "AusShepMix1-1.jpg",
+          "AusShep.jpg",
+          "AusShepMix1-3.jpg",
+        ]
+      },
+      { id:2,
+        animal: "Dog",
+        name: "Ollie",
+        gender: "Male",
+        breed: "Golden Retriever",
+        age: 1,
+        size: "Large",
+        images: [
+          "GoldenDog2.jpg",
+          "GoldenDog2-2.webp",
+        ]
+      },
+      { id:5,
+        animal: "Dog",
+        name: "Lily",
+        gender: "Female",
+        breed: "Beagle",
+        age: 1,
+        size: "Small",
+        images: [
+          "BeagleDog1-1.jpg",
+          "Beagle.avif",
+        ]
+      },
+      { id:3,
+        animal: "Dog",
+        name: "Bella",
+        gender: "Female",
+        breed: "Golden Retriever",
+        age: 2,
+        size: "Medium",
+        images: [
+          "GoldenDog3-1.avif",
+          "WhiteGolden.jpeg",
+          "GoldenDog3-3.webp",
+        ]
+      },
+      { id:6,
+        animal: "Dog",
+        name: "Austin",
+        gender: "Male",
+        breed: "Bulldog",
+        age: 2,
+        size: "Medium",
+        images: [
+          "Bulldog.webp",
+          "Bulldog2.jpeg",
+        ]
+      },
+      { id:7,
+        animal: "Dog",
+        name: "Zoe",
+        gender: "Female",
+        breed: "Chihuahua",
+        age: 1,
+        size: "Small",
+        images: [
+          "ChiDog1.jpg",
+          "ChiDog1-2.jpg",
+        ]
+      },
+      { id:13,
+        animal: "Cat",
+        name: "Poppy",
+        gender: "Female",
+        breed: "N/A",
+        age: 5,
+        size: "Small",
+        images: [
+          "cat1.jpg" ,
+          "OrangeCat.webp"       
+        ]
+      },
+      { id:12,
+        animal: "Dog",
+        name: "Sadie",
+        gender: "Female",
+        breed: "German Shepherd",
+        age: 2,
+        size: "Large",
+        images: [
+          "GSDog3.jpg",   
+          "WhiteGermanShep.webp",       
+        ]
+      },
+      { id:8,
+        animal: "Dog",
+        name: "Max",
+        gender: "Male",
+        breed: "Chihuahua",
+        age: 2,
+        size: "Small",
+        images: [
+          "ChiDog2.jpg",          
+        ]
+      },
+      { id:9,
+        animal: "Dog",
+        name: "Bailey",
+        gender: "Female",
+        breed: "Poodle Mix",
+        age: 1,
+        size: "Large",
+        images: [
+        "Poodle1.jpg", 
+          "PoodleMixDog1-1.jpg",   
+          "Poodle3.jpeg",      
+          "Poodle2.jpeg"
+        ]
+      },
+      { id:14,
+        animal: "Cat",
+        name: "Hudson",
+        gender: "Male",
+        breed: "N/A",
+        age: 1,
+        size: "Small",
+        images: [
+          "cat2.webp",          
+        ]
+      },
+      { id:10,
+        animal: "Dog",
+        name: "Jack",
+        gender: "Male",
+        breed: "German Shepherd",
+        age: 3,
+        size: "Large",
+        images: [
+        "German1.jpeg",   
+          "German2.jpg",  
+          "German3.jpg"      
+        ]
+      },
+      { id:11,
+        animal: "Dog",
+        name: "Charlie",
+        gender: "Male",
+        breed: "German Shepherd",
+        age: 1,
+        size: "Medium",
+        images: [
+          "GermanShepPup1.jpg",   
+          "GermanShepPup2.jpg",    
+          "GermanShepPup3.jpg"       
+   
+        ]
+      },
+      { id:15,
+        animal: "Cat",
+        name: "Riley",
+        gender: "Male",
+        breed: "N/A",
+        age: 3,
+        size: "Small",
+        images: [
+          "kitten.webp", 
+          "kitten2.webp"         
+        ]
+      }
+    ]
+
+function displayPets(filteredPets) {
+  const petGallery = document.getElementById('petGallery');
+  petGallery.innerHTML = ''; 
+
+  filteredPets.forEach(pet => {
+    const petInfo = document.createElement('div');
+    petInfo.classList.add('pet-info');
+    petInfo.innerHTML = `
+      <img src=${pet.images[0]} alt=${pet.name}>
+      <h2>${pet.name}</h2>
+      <p>Gender: ${pet.gender}</p>
+      <p>Breed: ${pet.breed}</p>
+      <p>Age: ${pet.age}</p>
+      <p>Size: ${pet.size}</p>
+    `;
+    petInfo.addEventListener('click', () => openGallery(pet));
+    petGallery.appendChild(petInfo)
+  });
+  
+}
+
+function filterPets() {
+  const breedFilter = document.getElementById('breed').value;
+  const sizeFilter = document.getElementById('size').value;
+  const animalFilter = document.getElementById('animal').value;
+  const genderFilter = document.getElementById('gender').value;
+
+  const filteredPets = pets.filter(pet => {
+    const breedMatch = breedFilter === 'All' || pet.breed === breedFilter;
+    const sizeMatch = sizeFilter === 'All' || pet.size === sizeFilter;
+    const animalMatch = animalFilter === 'All' || pet.animal === animalFilter;
+    const genderMatch = genderFilter === 'All' || pet.gender === genderFilter;
+
+    return breedMatch && sizeMatch && animalMatch && genderMatch;
+  });
+
+  displayPets(filteredPets);
+}
+
+document.getElementById('breed').addEventListener('change', filterPets);
+document.getElementById('size').addEventListener('change', filterPets);
+document.getElementById('animal').addEventListener('change', filterPets);
+document.getElementById('gender').addEventListener('change', filterPets);
+const overlay= document.querySelector('.overlay')
+    const overlayImage=overlay.querySelector('img')
+    const closeButton =overlay.querySelector('#close')
+    const nextButton= overlay.querySelector('#next')
+    const previousButton= overlay.querySelector('#previous')
+
+function openGallery(pet) {
+  const petGallery= document.getElementById('petGallery');
+  petGallery.innerHTML = '';
+
+  pet.images.forEach(image => {
+    const imgElement = document.createElement('img');
+    imgElement.src = image;
+    imgElement.alt = pet.name;
+    petGallery.appendChild(imgElement);
+  });
+  const images= document.querySelectorAll('#petGallery img')
+
+  for(const image of images){
+        image.addEventListener('click',()=> {
+            overlay.style.opacity=1
+            overlay.style.pointerEvents='auto'
+            currentImage=image
+            overlayImage.src=currentImage.src
+            currentIndex = [...images].indexOf(image);
+        })}
+
+  closeButton.addEventListener('click', () => {
+    overlay.style.opacity=0;
+    petGallery.innerHTML = '';
+    overlay.style.pointerEvents='none'  
+    displayPets(pets)}
+  )
+
+    nextButton.addEventListener('click', (event) =>{
+      event.preventDefault()
+      if(currentIndex<images.length-1){
+          currentIndex=currentIndex+1
+        }
+        else{
+          currentIndex=0
+        }
+        currentImage=images[currentIndex]
+        overlayImage.src=currentImage.src
+    })
+
+    previousButton.addEventListener('click', (event) =>{
+      event.preventDefault()
+        if(currentIndex>0){
+          currentIndex=currentIndex-1
+        }
+        else{
+          currentIndex=images.length-1
+        }
+        currentImage=images[currentIndex]
+        overlayImage.src=currentImage.src
+    })
+}
+displayPets(pets);
+    </script>
+    </section>
+    </main>
+    <footer>
+      <h2>Adoption Form!</h2>
+      <h3> Fill out your name, email, and the name of the pet you are interested in, to learn more about our adoption process!</h3>
+      <div class="forms">
+      <form>
+          <label> Name:</label><br>
+          <input type="text"><br><br>
+          <label>Email:</label><br>
+          <input type="text"><br><br>
+          <label>Pet Name (Optional):</label><br>
+          <input type="text"><br><br>
+          <br>
+          <input type="submit" value="Submit">
+          </form>
+        </div>
+        </footer>
   </body>
 </html>

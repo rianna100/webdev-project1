@@ -1,0 +1,432 @@
+body {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;  
+    background-color: #f4f4f4;
+    margin: 0;
+    text-align: center;
+    width:100%;
+}
+
+img{
+    max-width: 100%;
+        height:auto;
+        width:200px;
+}
+.main-heading img{
+    height:90px;
+    width:auto;
+}
+.main-heading{
+    display:flex;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+h1{
+    padding-top: 10px;
+}
+.headinglinks{
+    padding-top: 10px;
+}
+
+header {
+    font-family: "Courier New", Courier, monospace;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0px;
+    border: 5px solid #d5bdaf;
+    padding: 10px 20px; 
+    z-index: 1000; 
+    background-color: #e3d5ca;
+    color: #6b705c;
+}
+
+nav ul {
+    list-style: none; 
+    margin: 0; 
+    display: flex; 
+    justify-content: space-evenly;
+}
+
+nav ul li {
+    margin-left: 50px; 
+    margin-right: 50px;
+}
+
+nav ul li a {
+    text-decoration: none; 
+    color: #6b705c; 
+    font-size: 20px; 
+    padding: 5px 10px; 
+}
+
+nav ul li a:hover {
+    background-color: #f0f0f0; 
+    border-radius: 4px; 
+    color: #4f772d;
+}
+
+main{
+    padding-top: 120px;
+}
+.picture{
+    position: relative;  
+    z-index:-1
+}
+.Statistics{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+.Statistics img{
+    border-radius: 100px;
+    width:100px;
+    height:100px;
+    border: 7px solid #740909;
+}
+.Stat1 {
+    width:30%;
+    font-size: 18px;
+    padding-left: 20px;
+}
+.Stat2{
+    width:30%;
+    font-size: 18px;
+    padding-left: 3px;
+    padding-right: 2px;
+}
+.Stat3{
+    width:30%;
+    font-size: 18px;
+    padding-right: 20px;
+}
+
+.AnimalImage img {
+    z-index:-1;
+    margin:0;
+    width: 100%;
+    opacity: 0.5;
+    height:auto;    
+}
+
+.SaveLife h2  {
+    position: absolute; 
+    z-index: 1; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    color: #5e503f; 
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0; 
+    text-shadow: 2px 2px 4px #6b705c;
+}
+
+.picture h2 {
+    text-align: center;
+}
+
+.aboutfacts{
+    display:flex;
+    flex-wrap: nowrap;
+    gap:20px;
+    padding:20px;
+}
+#AboutUs, #facts {
+    padding: 10px;
+    box-sizing: border-box;
+}
+#AboutUs {
+    flex: 0 0 65%; 
+    background-color: #e3d5ca;
+    border-right: 1px solid #ddd;
+    border-radius: 8px;
+}
+#AboutUs p{
+    font-size:20px;
+    color:#263726;
+}
+#AboutUs h2{
+    font-size: 40px;
+    font-weight: 700;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 20px; 
+    display: inline-block; 
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+#aboutUsWords{
+    padding-top:12px;
+}
+.factSection h2{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+#facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.factSection{
+    flex: 1;
+    background-color: #e3d5ca;
+    border-right: 1px solid #ddd;
+    border-radius: 8px;;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.fact {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #263726;
+    width: 180px; 
+    height: 100px; 
+    overflow: auto; 
+}
+ .fact p {
+    margin: 0;
+}
+
+.Involved{
+    padding:20px;
+   
+}
+#GetInvolved{
+    padding:10px;
+    box-sizing: border-box;
+    background-color: #e3d5ca;
+    border-right: 1px solid #ddd;
+    border-radius: 8px;
+}
+#GetInvolved p{
+    font-size:20px;
+    color:#263726
+}
+#GetInvolved h2{
+    font-size: 40px;
+    font-weight: 700;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 20px; 
+    display: inline-block; 
+    box-sizing: border-box;
+    margin: 0 auto;
+
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 500px;
+    background-color: #49111c;
+    color: white;
+    cursor: pointer;
+    font-size: 25px;
+  }
+
+  button:hover {
+    background-color: #00539c;
+  }
+.AdoptablePets{
+    padding:20px;
+   
+}
+#Pets{
+    padding:10px;
+    box-sizing: border-box;
+    background-color: #e3d5ca;
+    border-right: 1px solid #ddd;
+    border-radius: 8px;
+}
+#Pets p{
+    font-size:20px;
+    color:#263726
+}
+#Pets h2{
+    font-size: 40px;
+    font-weight: 700;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 20px; 
+    display: inline-block; 
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.pet-Gallery{
+    display: grid;  
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));  
+  gap: 15px;  
+  padding: 20px;
+  justify-items: center;
+}
+.pet-Gallery img{
+    width: 280px;  
+    height: 220px; 
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+  }
+  
+  .filters label {
+    font-size: 20px;
+    font-weight: 700;
+}
+  
+  .filters select {
+    font-size: 16px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color:#263726;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .filters select:focus {
+    background-color: #e3d5ca; 
+    color: #263726; 
+  }
+
+  #donationPop {
+    display: none; 
+    position: fixed;
+    z-index: 1000; 
+    left:0;
+    top:0;
+    width: 1500px; 
+    height: 1000px;
+  }
+
+  .donationPopContent {
+    padding-top:50px;
+    background-color: #6b705c;
+    width: 65%; 
+    height:40%;
+    margin: 5% auto; 
+    padding: 50px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 40px;
+    right: 100px;
+    font-size: 50px;
+    color: black;
+    cursor: pointer;
+  }  
+  input[type=number]{
+    border-bottom: 2px solid;
+    background-color: rgb(247, 246, 244);
+    width:130px;
+    height:20px;
+ }
+
+ #submitDonation {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 200px;
+    background-color: #eef2f5;
+    color: black;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  #buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 400px;
+    padding-bottom: 20px;
+  }
+
+  .donate{
+    padding-top:100px
+  }
+  .donate p{
+    font-size: 20px;
+  }
+    #submitButton{
+    padding-right: 30px;
+    }
+
+    #close, #next, #previous{
+        font-size: 3rem;
+        color:rgb(202, 197, 197);
+        text-decoration:none;
+    }
+
+    #close{
+        position:absolute;
+        top:1rem;
+        right:1rem;
+    }
+     
+  .overlay{
+      position:fixed;
+      inset:0;
+      background-color:rgba(0,0,0,0.8);
+      opacity:0;
+      pointer-events:none;
+      z-index:2000;
+
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      gap:0.5rem;
+      transition: opacity 0.5s;
+  }
+
+  .overlay img{
+          max-width: 80%;
+          max-height: 80%;
+          border: 0.5rem solid rgb(202,197,197);
+          box-shadow: 0 0 10px rgba(0,0,0,0.2);
+          height:600px;
+          width:600px;
+          object-fit: cover;
+  }
+  .forms form{
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  label {
+    font-size: 20px;
+    color:#263726
+  }
+  input[type="text"] {
+    padding: 8px;
+    font-size: 14px;
+    width: 220px;
+    height:10px
+  }
+ 
+  .forms input[type="submit"] {
+    padding: 20px;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  footer{
+    padding:20px
+}
+
+
+  
+  
