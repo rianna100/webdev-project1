@@ -25,7 +25,6 @@
       </nav>
     </div>
     </header>
-
     <main>
       <section>
         <div class="picture">
@@ -36,7 +35,6 @@
               <img src="AdoptAnimal.avif" alt="Dog and Cat Picture">
           </div>
           </div>
-
           <div class="Statistics">
             <div class="Stat1">
               <img src="DogCatIcon.png" alt="Dog and Cat Icon">
@@ -51,7 +49,6 @@
               <p>About 2 million dogs and cats were adopted from shelters in 2023</p>
             </div>
           </div>
-
         <div class="aboutfacts">
         <div id="AboutUs">
             <h2>About Us</h2>
@@ -94,7 +91,6 @@
           </div>
     </div>
     </div>
-
     <div id="donationPop">
       <div class="donationPopContent">
         <span class="close-button">&times;</span>
@@ -110,21 +106,17 @@
       </div>
       </div>
     </div>
-
     <script>
       const donationPop = document.getElementById('donationPop');
       const donateButton = document.getElementById('donateNow');
       const closeDonationButton = document.querySelector('.close-button');
       const submitButton = document.getElementById('submitDonation');
-
   donateButton.addEventListener('click', () => {
     donationPop.style.display = 'block';
   });
-
   closeDonationButton.addEventListener('click', () => {
     donationPop.style.display = 'none';
   });
-
   submitButton.addEventListener('click', () => {
     const donationAmount = document.getElementById('donationAmount').value;
     if (donationAmount && donationAmount > 0) {
@@ -173,7 +165,6 @@
         <option value="Female">Female</option>
       </select>
       </div>
-
       <div class="pet-Gallery" id="petGallery"></div>
       <div class="overlay">
         <a href="#" id="previous">&lt;</a>
@@ -181,11 +172,9 @@
         <a href="#" id="next">&gt;</a>
         <a href="#" id="close">&times;</a>
       </div>
-
     <script>
       const pets= [
-      { id:1,
-        animal: "Dog",
+      { animal: "Dog",
         name: "Buddy",
         gender: "Male",
         breed: "Golden Retriever",
@@ -197,8 +186,7 @@
           "GoldenDog1-3.webp",
         ]
       },
-      { id:4,
-        animal: "Dog",
+      {animal: "Dog",
         name: "Oscar",
         gender: "Male",
         breed: "Australian Shepherd Mix",
@@ -210,8 +198,7 @@
           "AusShepMix1-3.jpg",
         ]
       },
-      { id:2,
-        animal: "Dog",
+      { animal: "Dog",
         name: "Ollie",
         gender: "Male",
         breed: "Golden Retriever",
@@ -222,8 +209,7 @@
           "GoldenDog2-2.webp",
         ]
       },
-      { id:5,
-        animal: "Dog",
+      { animal: "Dog",
         name: "Lily",
         gender: "Female",
         breed: "Beagle",
@@ -234,8 +220,7 @@
           "Beagle.avif",
         ]
       },
-      { id:3,
-        animal: "Dog",
+      { animal: "Dog",
         name: "Bella",
         gender: "Female",
         breed: "Golden Retriever",
@@ -247,8 +232,7 @@
           "GoldenDog3-3.webp",
         ]
       },
-      { id:6,
-        animal: "Dog",
+      { animal: "Dog",
         name: "Austin",
         gender: "Male",
         breed: "Bulldog",
@@ -259,8 +243,7 @@
           "Bulldog2.jpeg",
         ]
       },
-      { id:7,
-        animal: "Dog",
+      { animal: "Dog",
         name: "Zoe",
         gender: "Female",
         breed: "Chihuahua",
@@ -271,8 +254,7 @@
           "ChiDog1-2.jpg",
         ]
       },
-      { id:13,
-        animal: "Cat",
+      { animal: "Cat",
         name: "Poppy",
         gender: "Female",
         breed: "N/A",
@@ -283,8 +265,7 @@
           "OrangeCat.webp"       
         ]
       },
-      { id:12,
-        animal: "Dog",
+      { animal: "Dog",
         name: "Sadie",
         gender: "Female",
         breed: "German Shepherd",
@@ -295,8 +276,7 @@
           "WhiteGermanShep.webp",       
         ]
       },
-      { id:8,
-        animal: "Dog",
+      { animal: "Dog",
         name: "Max",
         gender: "Male",
         breed: "Chihuahua",
@@ -306,8 +286,7 @@
           "ChiDog2.jpg",          
         ]
       },
-      { id:9,
-        animal: "Dog",
+      { animal: "Dog",
         name: "Bailey",
         gender: "Female",
         breed: "Poodle Mix",
@@ -320,8 +299,7 @@
           "Poodle2.jpeg"
         ]
       },
-      { id:14,
-        animal: "Cat",
+      { animal: "Cat",
         name: "Hudson",
         gender: "Male",
         breed: "N/A",
@@ -331,8 +309,7 @@
           "cat2.webp",          
         ]
       },
-      { id:10,
-        animal: "Dog",
+      { animal: "Dog",
         name: "Jack",
         gender: "Male",
         breed: "German Shepherd",
@@ -344,8 +321,7 @@
           "German3.jpg"      
         ]
       },
-      { id:11,
-        animal: "Dog",
+      { animal: "Dog",
         name: "Charlie",
         gender: "Male",
         breed: "German Shepherd",
@@ -355,11 +331,9 @@
           "GermanShepPup1.jpg",   
           "GermanShepPup2.jpg",    
           "GermanShepPup3.jpg"       
-   
         ]
       },
-      { id:15,
-        animal: "Cat",
+      { animal: "Cat",
         name: "Riley",
         gender: "Male",
         breed: "N/A",
@@ -371,11 +345,9 @@
         ]
       }
     ]
-
 function displayPets(filteredPets) {
   const petGallery = document.getElementById('petGallery');
   petGallery.innerHTML = ''; 
-
   filteredPets.forEach(pet => {
     const petInfo = document.createElement('div');
     petInfo.classList.add('pet-info');
@@ -390,27 +362,21 @@ function displayPets(filteredPets) {
     petInfo.addEventListener('click', () => openGallery(pet));
     petGallery.appendChild(petInfo)
   });
-  
 }
-
 function filterPets() {
   const breedFilter = document.getElementById('breed').value;
   const sizeFilter = document.getElementById('size').value;
   const animalFilter = document.getElementById('animal').value;
   const genderFilter = document.getElementById('gender').value;
-
   const filteredPets = pets.filter(pet => {
-    const breedMatch = breedFilter === 'All' || pet.breed === breedFilter;
+    const breedMatch = breedFilter == 'All' || pet.breed === breedFilter;
     const sizeMatch = sizeFilter === 'All' || pet.size === sizeFilter;
     const animalMatch = animalFilter === 'All' || pet.animal === animalFilter;
     const genderMatch = genderFilter === 'All' || pet.gender === genderFilter;
-
     return breedMatch && sizeMatch && animalMatch && genderMatch;
   });
-
   displayPets(filteredPets);
 }
-
 document.getElementById('breed').addEventListener('change', filterPets);
 document.getElementById('size').addEventListener('change', filterPets);
 document.getElementById('animal').addEventListener('change', filterPets);
@@ -420,11 +386,9 @@ const overlay= document.querySelector('.overlay')
     const closeButton =overlay.querySelector('#close')
     const nextButton= overlay.querySelector('#next')
     const previousButton= overlay.querySelector('#previous')
-
 function openGallery(pet) {
   const petGallery= document.getElementById('petGallery');
   petGallery.innerHTML = '';
-
   pet.images.forEach(image => {
     const imgElement = document.createElement('img');
     imgElement.src = image;
@@ -432,7 +396,6 @@ function openGallery(pet) {
     petGallery.appendChild(imgElement);
   });
   const images= document.querySelectorAll('#petGallery img')
-
   for(const image of images){
         image.addEventListener('click',()=> {
             overlay.style.opacity=1
@@ -441,14 +404,12 @@ function openGallery(pet) {
             overlayImage.src=currentImage.src
             currentIndex = [...images].indexOf(image);
         })}
-
   closeButton.addEventListener('click', () => {
     overlay.style.opacity=0;
     petGallery.innerHTML = '';
     overlay.style.pointerEvents='none'  
     displayPets(pets)}
   )
-
     nextButton.addEventListener('click', (event) =>{
       event.preventDefault()
       if(currentIndex<images.length-1){
@@ -460,7 +421,6 @@ function openGallery(pet) {
         currentImage=images[currentIndex]
         overlayImage.src=currentImage.src
     })
-
     previousButton.addEventListener('click', (event) =>{
       event.preventDefault()
         if(currentIndex>0){
